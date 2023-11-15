@@ -5,7 +5,12 @@
 #include <vector>
 
 class MergeSort {
+    
     private: 
+    // Pomocnicza funkcja do scalania dwóch posortowanych fragmentów
+    void merge(std::vector<int>& arr, int left, int middle, int right);
+
+
     public:
     MergeSort() = default;
     ~MergeSort() = default;
