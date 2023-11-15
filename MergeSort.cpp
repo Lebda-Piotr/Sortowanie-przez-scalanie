@@ -45,3 +45,21 @@ void MergeSort::merge(vector<int>& arr, int left, int middle, int right) {
         k++;
     }
 }
+
+void MergeSort::mergeSort(vector<int>& arr) {
+    int n = arr.size();
+    if (n > 1) {
+        int middle = n / 2;
+
+        // Dzielenie tablicy na dwa fragmenty
+        vector<int> left(arr.begin(), arr.begin() + middle);
+        vector<int> right(arr.begin() + middle, arr.end());
+
+        // Sortowanie obu fragmentów
+        mergeSort(left);
+        mergeSort(right);
+
+        // Scalanie posortowanych fragmentów
+        merge(arr, 0, middle - 1, n - 1);
+    }
+}
