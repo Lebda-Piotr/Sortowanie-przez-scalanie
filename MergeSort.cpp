@@ -31,4 +31,17 @@ void MergeSort::merge(vector<int>& arr, int left, int middle, int right) {
         }
         k++;
     }
+    // Kopiowanie pozostałych elementów z L[], jeśli istnieją
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    // Kopiowanie pozostałych elementów z R[], jeśli istnieją
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
 }
